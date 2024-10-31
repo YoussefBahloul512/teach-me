@@ -1,0 +1,30 @@
+@use './_variable' as *;
+
+@mixin brd-bottom() {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: $second-color; 
+    transform: translateX(-50%);
+    margin-top: $margin-top;
+    margin-bottom: $margin-top;
+}
+
+@mixin header-title() {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: $margin-normal;
+    color: $title-color;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 52px;
+        height: 5px;
+        background-color: $primary-color;
+    }
+}

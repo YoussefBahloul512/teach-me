@@ -1,0 +1,453 @@
+@use "sass:color";
+@use './_variable' as *;
+@use './mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: 'Almarai', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFF1E6;
+}
+
+.br-bottom {
+    @include mixins.brd-bottom();
+}
+
+.header-text {
+    @include mixins.header-title();
+}
+
+header {
+    .navbar {
+        background-color: $primary-color;
+        margin: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        background-color: $navbar_input-bg;
+
+        .navbar-brand img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        color: $title-color;
+                        font-size: 17px;
+                        border-radius: 5px;
+                        transition: color 0.3s ease;
+
+                        &.active {
+                            font-weight: bold;
+                            color: $primary-color;
+                        }
+
+                        &:hover {
+                            color: $second-color;
+                        }
+
+                        svg {
+                            color: $second-color !important;
+                        }
+                    }
+
+                    .signup {
+                        width: fit-content;
+                        padding: $padding;
+                        background-color: $second-color;
+                        color: white;
+                        border-radius: 5px;
+                        transition: background-color 0.3s ease;
+
+                        &:hover {
+                            background-color: rgba($primary-color, 0.7);
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 100px;
+
+    section.about-us {
+        background-color: $background-color;
+        margin-top: $margin-top;
+
+        .carousel-wrapper {
+            position: relative;
+
+            .carousel-inner {
+                .carousel-item {
+                    transition: transform 0.7s ease;
+
+                    img {
+                        max-width: 80%;
+                        height: 600px;
+                        object-fit: cover;
+                        margin: 0 auto;
+                        padding: 30px;
+                    }
+                }
+            }
+
+            .carousel-indicators {
+                position: absolute;
+                bottom: 10px;
+                z-index: 10;
+                display: flex;
+                gap: 8px;
+
+                button {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: $second-color;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .active {
+                    background-color: $button-bg;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    section.our-activities {
+        margin-top: $margin-top;
+
+        h4.title-for-school {
+            color: $title-color;
+            margin-bottom: $margin-normal;
+        }
+
+        p.text-for-school {
+            font-size: 24px;
+            color: $value-color;
+
+        }
+
+        .col-md-6 {
+            .card {
+                background-color: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                margin: $margin-top auto;
+                width: 80%;
+
+                &-header {
+                    background-color: white;
+                    text-align: center;
+                    padding-bottom: $md-padding;
+
+                    svg {
+                        font-size: 100px;
+                        color: $primary-color;
+                    }
+                }
+
+                &-text {
+                    padding-top: $md-padding;
+                    color: $text-muted;
+                    font-size: 18px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    /* number of lines to show */
+                    line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+
+    section.our-students {
+        .our-students {
+            background-color: $background-color;
+            margin-top: $margin-top;
+        }
+
+        .carousel {
+            &-inner {
+                .carousel-item {
+                    transition: transform 0.7s ease;
+                    background-color: none !important;
+
+                    img {
+                        padding: $md-padding 0;
+                        height: 500px;
+                        object-fit: cover;
+                        margin: auto;
+                        max-width: 70%;
+                    }
+
+                    .carousel-caption {
+                        max-width: 100%;
+                        position: absolute;
+                        background-color: rgba(129, 128, 128, 0.6);
+                        margin: 0;
+
+                        h3 {
+                            font-size: 32px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            color: white;
+                            font-weight: 700;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            button {
+                svg {
+                    font-size: 32px;
+                    color: $second-color;
+                }
+            }
+        }
+    }
+
+    section.stars-students {
+        .row {
+            justify-content: center;
+        }
+
+        .card {
+            margin: $margin-top auto;
+            border: 1px solid $border-color;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            width: 90%;
+
+            img {
+                border-bottom: 2px solid $border-color;
+                object-fit: cover;
+            }
+
+            .card-body {
+                padding: $md-padding;
+
+                .card-title {
+                    font-weight: bold;
+                    font-size: 24px;
+                    color: $primary-color;
+
+                    .student-name {
+                        color: $value-color;
+                    }
+                }
+
+                .card-text {
+                    font-size: 16px;
+                    color: $second-color;
+                    margin-top: $padding;
+
+                    svg {
+                        color: $text-color;
+                        margin-right: $padding;
+                    }
+
+                    .excellence-rank {
+                        color: $text-color;
+                        font-weight: 600;
+                        padding: 3px 6px;
+                        border-radius: 4px;
+                        background-color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+
+            .btn {
+                background-color: $button-bg;
+                font-weight: 500;
+                color: white;
+
+                &:hover {
+                    background-color: color.adjust($button-bg, $lightness: 10%);
+                }
+            }
+        }
+    }
+
+    section.contact-with-us {
+        padding: $md-padding;
+
+        .contact {
+            h6 {
+                color: $title-color;
+                font-weight: 700;
+                margin-bottom: 15px;
+
+                span {
+                    color: $value-color;
+                    font-weight: 600;
+                }
+            }
+
+            i {
+                color: $primary-color;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+footer.footer {
+    margin-top: $margin-top;
+    background-color: $background-color;
+    padding-top: $md-padding;
+    color: $text-color;
+
+    .row {
+        h1.header-text {
+            margin-top: 0;
+            margin-bottom: $margin-normal;
+            font-size: 24px;
+            width: fit-content;
+
+            &::after {
+                height: 3px;
+                width: 40px;
+            }
+        }
+
+        h6 {
+            font-size: 16px;
+            color: $title-color;
+            font-weight: bold;
+            padding-bottom: $padding;
+
+
+        }
+
+        span {
+            font-size: 16px;
+            color: $value-color;
+        }
+
+        .text-center {
+            p {
+                background-color: #292018;
+                font-size: 12px;
+                color: $text-muted;
+            }
+        }
+
+        .webpages {
+            a {
+                text-decoration: underline $title-color;
+                display: block;
+                width: fit-content;
+                padding-bottom: 5px;
+
+                h6:hover {
+                    color: $value-color !important;
+                }
+            }
+        }
+    }
+
+    .text-center.py-2 {
+        color: $text-muted;
+        transform: translateY(100%);
+        background-color: #E0D5C8;
+    }
+}
+
+@media (max-width: 1200px) {
+    .carousel-inner {
+        .carousel-item {
+            img {
+                height: 450px !important;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    section.our-students {
+        .carousel {
+            &-inner {
+                .carousel-item {
+                    position: relative !important;
+
+                    img {
+                        max-width: 100% !important;
+                    }
+
+                    .carousel-caption {
+                        display: block !important;
+                        width: 100%;
+                        transform: translateX(15%);
+
+                        h3 {
+                            font-size: 24px;
+                        }
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            button {
+                svg {
+                    font-size: 28px !important;
+                    color: $second-color;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    section.about-us {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    max-width: 100% !important;
+                    height: 400px !important;
+                }
+            }
+        }
+    }
+
+    section.stars-students {
+        .card-body {
+            h5.card-title {
+                font-size: 18px !important;
+            }
+
+            p.card-text {
+                font-size: 16px !important;
+            }
+
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+}

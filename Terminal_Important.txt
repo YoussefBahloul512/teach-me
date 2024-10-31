@@ -1,0 +1,17 @@
+// ربما لم أقم بكتابة كل شيئ ولكن أعتقد أنهم الأهم
+
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
+npm init -y
+npm i lodash // I delete this one
+npm install style-loader css-loader sass-loader sass --save-dev
+npm install file-loader --save-dev
+npm install jquery --save
+npm install bootstrap @fortawesome/fontawesome-free --save
+npm i --save-dev webpack-bundle-analyzer
+npm i --save-dev webpack-dev-server
+npm i HtmlWebpackPlugin
+
+
+
+taskkil /PID "<pid>" /F
